@@ -1,3 +1,18 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  #react-markdown h1 {
+    @apply text-black w-fit px-2;
+    width: fit-content;
+    background-color: theme('colors.neon-yellow');
+  }
+  #react-markdown a {
+    @apply underline;
+    color: theme('colors.neon-yellow');
+  }
+  #react-markdown pre {
+    @apply whitespace-pre-line;
+  }
+}

@@ -13,10 +13,13 @@ export default function Home() : FC {
   const [openedFiles, setOpenedFiles] = useState<Array<WindowsFile>>(initialOpenedFiles);
   return (
     <Fragment>
-      <main>
-        <DraggableArea>
-          {openedFiles.map((openedFile : WindowsFile) => <FileEditor key={openedFile.location} file={openedFile} /> )}
-        </DraggableArea>
+      <main className="overflow-hidden">
+        {openedFiles.map(
+          (openedFile : WindowsFile) =>
+            <DraggableArea>
+              <FileEditor key={openedFile.name} file={openedFile} />
+            </DraggableArea>
+        )}
       </main>
       <Taskbar setOpenedFiles={setOpenedFiles} openedFiles={openedFiles} availableFiles={availableFiles} />
       <BackgroundElements />
