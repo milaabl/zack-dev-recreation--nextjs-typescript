@@ -41,7 +41,9 @@ export default function FileEditor ({
       <div className="text-white p-4">
         <Image src={file.icon} alt={file.name} width={32} height={32} />
         <div id="react-markdown">
-          <ReactMarkdown remarkPlugins={[remarkGfm]} children={file.markdownContents} />
+          <ReactMarkdown remarkPlugins={[remarkGfm]}>
+            {file.markdownContents}
+          </ReactMarkdown>
         </div>
       </div>
   </section>

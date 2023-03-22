@@ -19,7 +19,7 @@ export default function StartMenu ({
     <Image width={29} height={29} src={startMenuIcon.src} alt='Start menu' />
     <span className="font-bold text-xl">Start</span>
     <div className={`${!isOpen ? 'hidden' : ''} bg-windows-tan border-2 border-r-black border-b-white border-t-black border-l-white w-52 bottom-12 absolute left-0 flex flex-col`}>
-      {availableFiles.map((availableFile : WindowsFile) => <button className="hover:bg-dark-blue hover:text-white w-full p-2 text-lg flex items-center gap-1.5" onClick={() => {
+      {availableFiles.map((availableFile : WindowsFile) => <button key={availableFile.name} className="hover:bg-dark-blue hover:text-white w-full p-2 text-lg flex items-center gap-1.5" onClick={() => {
         if (openedFiles.find((file : WindowsFile) => file.name === availableFile.name)) return;
 
         setOpenedFiles((openedFiles : Array<WindowsFile>) => [...openedFiles, availableFile]);

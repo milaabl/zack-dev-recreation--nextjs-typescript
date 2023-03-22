@@ -18,7 +18,7 @@ export default function Home() : FC {
       <SystemProperties />
         {openedFiles.map(
           (openedFile : WindowsFile, index : number) =>
-            <DraggableArea>
+            <DraggableArea key={openedFile.name}>
               <FilePreview onMaxify={() => {
                 const newOpenedFiles = [...openedFiles];
                 const updatedFile = {...openedFile, isMaxified: !openedFile.isMaxified};
