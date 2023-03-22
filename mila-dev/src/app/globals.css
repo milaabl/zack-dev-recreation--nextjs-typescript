@@ -11,6 +11,7 @@
   #react-markdown a {
     @apply underline;
     color: theme('colors.neon-yellow');
+    overflow-wrap: break-word;
   }
   #react-markdown pre {
     @apply whitespace-pre-line;

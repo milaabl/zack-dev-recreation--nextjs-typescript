@@ -3,6 +3,7 @@ import blogIcon from '@/assets/icons/notepad.ico';
 
 export const availableFiles = [{
   isToggled: true,
+  isMaxified: false,
   location: 'C:/mila.dev/home',
   markdownContents: `# About
 I decided to recreate https://zach.dev using Typescript, NextJS and TailwindCSS
@@ -13,6 +14,7 @@ The The GitHub repo is: https://github.com/milaabl/mila-dev-website`,
 },
 {
   isToggled: true,
+  isMaxified: false,
   markdownContents: `In progress...`,
   location: 'C:/mila.dev/blog',
   name: 'Blog',
@@ -24,6 +26,7 @@ export const initialOpenedFiles = [
 ];
 
 export interface WindowsFile {
+  isMaxified: boolean;
   location: string;
   markdownContents: string;
   name: string;

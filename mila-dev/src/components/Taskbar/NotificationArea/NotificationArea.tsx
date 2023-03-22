@@ -27,6 +27,6 @@ export default function NotificationArea () : FC {
         </button>
         <VolumeSlider isOpen={isOpen} volume={volume} setVolume={setVolume} />
       </div>
-    <span className="text-xl uppercase">{hours === 0 ? '00' : hours}:{minutes === 0 ? '00' : minutes} {ampm}</span>
+    <span className="hidden md:block text-xl uppercase">{hours === 0 ? '00' : hours < 10 ? '0' + hours : hours}:{minutes === 0 ? '00' : minutes < 10 ? '0' + minutes : minutes} {ampm}</span>
   </div>;
 };
