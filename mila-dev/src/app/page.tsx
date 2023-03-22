@@ -7,7 +7,7 @@ import BackgroundElements from '@/components/BackgroundElements/BackgroundElemen
 import Taskbar from '@/components/Taskbar/Taskbar';
 import DraggableArea from '@/components/DraggableArea/DraggableArea';
 import SystemProperties from '@/components/SystemProperties/SystemProperties';
-import FileEditor from '@/components/FileEditor/FileEditor';
+import FilePreview from '@/components/FilePreview/FilePreview';
 import { WindowsFile, availableFiles, initialOpenedFiles } from '@/data/mock';
 
 export default function Home() : FC {
@@ -19,7 +19,7 @@ export default function Home() : FC {
         {openedFiles.map(
           (openedFile : WindowsFile, index : number) =>
             <DraggableArea>
-              <FileEditor onMaxify={() => {
+              <FilePreview onMaxify={() => {
                 const newOpenedFiles = [...openedFiles];
                 const updatedFile = {...openedFile, isMaxified: !openedFile.isMaxified};
                 newOpenedFiles.splice(index, 1, updatedFile);
