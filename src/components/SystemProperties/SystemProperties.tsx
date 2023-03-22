@@ -1,12 +1,12 @@
 'use client'
 
-import { Fragment, useState, FC } from 'react';
+import { Fragment, useState } from 'react';
 import folderIcon from '@/assets/icons/folder.png';
 import closeIcon from '@/assets/icons/close.png';
 import ludmilaAblIcon from '@/assets/icons/ludmila-abl.png';
 import Image from 'next/image';
 
-export default function SystemProperties () : FC {
+export default function SystemProperties () {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const closeModal = () => setIsOpen(val => !val);
   return <Fragment>

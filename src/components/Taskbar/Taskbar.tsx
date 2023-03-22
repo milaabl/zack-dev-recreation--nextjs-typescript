@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React from 'react';
 import StartMenu from '@/components/Taskbar/StartMenu/StartMenu';
 import NotificationArea from '@/components/Taskbar/NotificationArea/NotificationArea';
 import { WindowsFile } from '@/data/mock';
@@ -14,7 +14,7 @@ export default function Taskbar ({
   setOpenedFiles,
   openedFiles,
   availableFiles
-}) : FC<TaskbarProps> {
+} : TaskbarProps) {
   return (<header className="p-1 h-10 w-full border border-white bg-windows-tan flex sticky bottom-0 left-0 p-1 gap-1.5">
       <StartMenu openedFiles={openedFiles} setOpenedFiles={setOpenedFiles} availableFiles={availableFiles} />
       <nav>

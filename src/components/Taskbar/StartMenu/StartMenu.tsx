@@ -1,10 +1,10 @@
-import React, { useState, FC } from 'react';
+import React, { useState } from 'react';
 import startMenuIcon from '@/assets/icons/win95-logo.ico';
 import Image from 'next/image';
 import { WindowsFile } from '@/data/mock';
 
 interface StartMenuProps {
-  setOpenedFiles: Array<WindowsFile>;
+  openedFiles: Array<WindowsFile>;
   availableFiles: Array<WindowsFile>;
   setOpenedFiles: React.Dispatch<React.SetStateAction<Array<WindowsFile>>>;
 };
@@ -13,7 +13,7 @@ export default function StartMenu ({
   availableFiles,
   setOpenedFiles,
   openedFiles
-}) : FC<StartMenuProps> {
+}: StartMenuProps) {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   return <button onClick={() => setIsOpen((val : boolean) => !val)} className="cursor-pointer w-28 border border-b-white border-r-white border-l-black border-t-black focus:border-t-white focus:border-l-white focus:border-r-black focus:border-b-black h-full border-2 flex p-1.5 items-center gap-1.5">
     <Image width={29} height={29} src={startMenuIcon.src} alt='Start menu' />

@@ -1,5 +1,4 @@
 import remarkGfm from 'remark-gfm';
-import { FC } from 'react';
 import { WindowsFile } from '@/data/mock';
 import ReactMarkdown from 'react-markdown';
 import minifyIcon from '@/assets/icons/minify.png';
@@ -19,7 +18,7 @@ export default function FileEditor ({
   onClose,
   onMinify,
   onMaxify
-}) : FC<FileEditorProps> {
+} : FileEditorProps) {
   return <section className={`w-full border-4 bg-black border-windows-tan ${file.isMaxified ? '' : 'md:w-1/3' } ${file.isToggled ? 'visible' : 'hidden'} flex flex-col`}>
       <div className="border-b-4 border-windows-tan justify-between items-center bg-dark-blue flex w-full">
         <span className="text-white gap-2 px-1.5 items-center flex">

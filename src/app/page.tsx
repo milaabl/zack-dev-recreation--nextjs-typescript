@@ -2,7 +2,7 @@
 
 import './globals.css';
 import { Inconsolata } from 'next/font/google';
-import { useState, Fragment, FC } from 'react';
+import { useState, Fragment } from 'react';
 import BackgroundElements from '@/components/BackgroundElements/BackgroundElements';
 import Taskbar from '@/components/Taskbar/Taskbar';
 import DraggableArea from '@/components/DraggableArea/DraggableArea';
@@ -10,7 +10,7 @@ import SystemProperties from '@/components/SystemProperties/SystemProperties';
 import FilePreview from '@/components/FilePreview/FilePreview';
 import { WindowsFile, availableFiles, initialOpenedFiles } from '@/data/mock';
 
-export default function Home() : FC {
+export default function Home() {
   const [openedFiles, setOpenedFiles] = useState<Array<WindowsFile>>(initialOpenedFiles);
   return (
     <Fragment>

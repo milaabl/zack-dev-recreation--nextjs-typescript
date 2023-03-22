@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, FC } from 'react';
+import { useState } from 'react';
 import { useTime } from 'react-timer-hook';
 import volumeOnIcon from '@/assets/icons/volume-on.png';
 import volumeOffIcon from '@/assets/icons/volume-off.png';
@@ -8,7 +8,7 @@ import ReactSound from 'react-sound';
 import VolumeSlider from '@/components/Taskbar/NotificationArea/VolumeSlider/VolumeSlider';
 import Image from 'next/image';
 
-export default function NotificationArea () : FC {
+export default function NotificationArea () {
   const [volume, setVolume] = useState<number>(0);
   const {
     minutes,
@@ -21,7 +21,7 @@ export default function NotificationArea () : FC {
   return <div className="ml-auto border-2 border-windows-grey border-b-white h-full items-center gap-2 px-1 flex">
       <div className="flex">
         <button onClick={() => setIsOpen((value : boolean) => !value)}>
-          <ReactSound url="/music/audio.mp3" playStatus={ReactSound.status.PLAYING} volume={volume} loop={true} />
+          <ReactSound url="/music/audio.mp3" playStatus="PLAYING" volume={volume} loop={true} />
           <Image alt="Sound on" className={volume > 0 ? 'block' : 'hidden'} src={volumeOnIcon.src} width={23} height={23} />
           <Image alt="Sound off" className={volume <= 0 ? 'block' : 'hidden'} src={volumeOffIcon.src} width={23} height={23} />
         </button>

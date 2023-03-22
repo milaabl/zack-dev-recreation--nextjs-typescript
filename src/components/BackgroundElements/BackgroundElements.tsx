@@ -1,10 +1,9 @@
-import { FC } from 'react';
 import Image from 'next/image';
 import athenaStatueImg from '@/assets/images/athena-statue.png';
 import starsImg from '@/assets/effects/stars-universe.gif';
 
 
-export default function BackgroundElements () : FC {
+export default function BackgroundElements () {
   return <div style={{
     backgroundImage: `url('${starsImg.src}')`
   }} className={`-z-10 flex items-center justify-center bg-center absolute top-0 right-0 bottom-0 left-0`}>
