@@ -25,7 +25,7 @@ export default function NotificationArea () {
   }} className="ml-auto border-2 border-windows-grey border-b-white h-full items-center gap-2 px-1 flex">
       <div className="flex">
         <button onClick={() => setIsOpen((value : boolean) => !value)}>
-          <ReactSound url="/music/audio.mp3" playStatus={playStatus} volume={volume} loop={true} />
+          { playStatus === 'PLAYING' && <ReactSound url="./music/audio.mp3" playStatus={playStatus} volume={volume} loop={true} /> }
           <Image alt="Sound on" className={volume > 0 ? 'block' : 'hidden'} src={volumeOnIcon.src} width={23} height={23} />
           <Image alt="Sound off" className={volume <= 0 ? 'block' : 'hidden'} src={volumeOffIcon.src} width={23} height={23} />
         </button>
